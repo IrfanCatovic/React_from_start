@@ -1,9 +1,9 @@
 import "./ExpenseDate.css";
 
-function ExpenseDate(props) {
-  const month = props.date.toLocaleString("en-US", { month: "long" });
+const ExpenseDate = (props) => {
+  const month = props.date.toLocaleString("en-US", { month: "long" }); //en-us nas pita za jezik, long nacin ispisivanja datuma
   const day = props.date.toLocaleString("en-US", { day: "2-digit" });
-  const year = props.date.getFullYear();
+  const year = props.date.getFullYear(); //za ispisivanje godine metoda
 
   return (
     <div className="expense-date">
@@ -12,6 +12,6 @@ function ExpenseDate(props) {
       <div className="expense-date__day">{day}</div>
     </div>
   );
-}
+};
 
 export default ExpenseDate;
