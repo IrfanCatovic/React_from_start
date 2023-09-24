@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
+  //OVO JE DRUGI KORAK
+  //ocekujemo neki props, jer smo u newExpenses upisali funkciju onSaveExpenseData
+
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -49,7 +52,7 @@ const ExpenseForm = (props) => {
       amount: enteredAmount,
       date: new Date(enteredDate), //convert date string into date object
     };
-    props.onSaveExpenseData(expenseData);
+    props.onSaveExpenseData(expenseData); //Ovde koristimo funkciju iz newExpense, a koju smo poslali uz pomoc props i saljemo expenseData kao argument u NewExpense
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
